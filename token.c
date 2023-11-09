@@ -1,17 +1,17 @@
 #include "shell.h"
 
 /**
-* split_line - tokinize command prompt into an array
-* @line - pointer array to tokenize
+* split_line - Tokinize command prompt in line into an array
+* @line: pointer array to tokenize
 *
-* Return - Array containing spilt command prompt
+* Return: containing spilt command prompt
 */
 
-char** split_line(char *line)
+char **split_line(char *line)
 {
 	int length = 0;
 	int bufer = 100;
-	char **tokens = malloc(sizeof(char*) * bufer);
+	char **tokens = malloc(sizeof(char *) * bufer);
 
 	char *delimiters = " \t\r\n";
 	char *token = strtok(line, delimiters);
@@ -25,5 +25,5 @@ char** split_line(char *line)
 	}
 
 	tokens[length] = NULL;
-	return tokens;
+	return (tokens);
 }

@@ -20,7 +20,7 @@ int _strlen(char *s)
 
 /**
 * my_prompt - print a string text to stdout
-* @prompt - pointer array to text to print
+* @prompt: pointer array to text to print
 *
 * Return: 0
 */
