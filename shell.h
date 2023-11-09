@@ -9,8 +9,8 @@
 #include <unistd.h>
 
 char* read_line();
-char** kash_split_line(char *line);
-void kash_exec(char **args);
+char** split_line(char *line);
+void _exec(char **args);
 
 
 #endif /* SHELL_H */
