@@ -25,7 +25,7 @@ int _strlen(char *s)
 * Return: 0
 */
 
-void my_prompt(const char *prompt)
+void my_prompt(char *prompt)
 {
   write(STDOUT_FILENO, prompt, _strlen(prompt));
 }

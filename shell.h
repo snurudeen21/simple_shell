@@ -9,7 +9,7 @@
 #include <unistd.h>
 
 int _strlen(char *s);
-void my_prompt(const char *prompt);
+void my_prompt(char *prompt);
 char* read_line();
 char** split_line(char *line);
 void _exec(char **args);
