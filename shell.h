@@ -8,7 +8,7 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
-void my_pompt(char *prompt);
+void my_prompt(const char *prompt);
 char* read_line();
 char** split_line(char *line);
 void _exec(char **args);
