@@ -8,13 +8,13 @@
 
 int main()
 {
-    while (true) 
+    while (true)
     {
-        my_printf("#cisfun$ ");
+        my_prompt("#cisfun$ ");
         char *line = read_line();
         char **tokens = split_line(line);
 
-        if (tokens[0] != NULL) 
+        if (tokens[0] != NULL)
         {
             _exec(tokens);
         }
