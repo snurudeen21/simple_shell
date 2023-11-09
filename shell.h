@@ -8,7 +8,7 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
-char* kash_read_line();
+char* read_line();
 char** kash_split_line(char *line);
 void kash_exec(char **args);
 
