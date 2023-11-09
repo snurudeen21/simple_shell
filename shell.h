@@ -8,6 +8,7 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
+int _strlen(char *s);
 void my_prompt(const char *prompt);
 char* read_line();
 char** split_line(char *line);
