@@ -9,27 +9,21 @@
 
 char** split_line(char *line)
 {
-    int length = 0;
-    int bufer = 16;
-    char **tokens = malloc(sizeof(char*) * bufer);
+	int length = 0;
+	int bufer = 100;
+	char **tokens = malloc(sizeof(char*) * bufer);
 
-    char *delimiters = " \t\r\n";
-    char *token = strtok(line, delimiters);
+	char *delimiters = " \t\r\n";
+	char *token = strtok(line, delimiters);
 
-    while (token != NULL)
-    {
-        tokens[length] = token;
-        length++;
+	while (token != NULL)
+	{
+		tokens[length] = token;
+		length++;
 
-        if (length >= bufer)
-        {
-            bufer = (int) (bufer * 1.5);
-            tokens = realloc(tokens, bufer * sizeof(char*));
-        }
+		token = strtok(NULL, delimiters);
+	}
 
-        token = strtok(NULL, delimiters);
-    }
-
-    tokens[length] = NULL;
-    return tokens;
+	tokens[length] = NULL;
+	return tokens;
 }
