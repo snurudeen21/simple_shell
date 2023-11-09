@@ -27,5 +27,5 @@ int _strlen(char *s)
 
 void my_prompt(char *prompt)
 {
-  write(STDOUT_FILENO, prompt, _strlen(prompt));
+	write(STDOUT_FILENO, prompt, _strlen(prompt));
 }
