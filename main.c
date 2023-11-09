@@ -10,7 +10,6 @@ int main(void)
 {
 	while (true)
 	{
-		my_prompt("#cisfun$ ");
 		char *line = read_line();
 		char **tokens = split_line(line);
 
