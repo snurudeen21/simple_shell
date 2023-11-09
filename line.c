@@ -6,9 +6,9 @@
 */
 char* read_line()
 {
-    char *line = NULL;
-    size_t buflen = 0;
+	char *line = NULL;
+	size_t buflen = 0;
     
-    getline(&line, &buflen, stdin);
-    return line;
+	getline(&line, &buflen, stdin);
+	return line;
 }
