@@ -14,10 +14,8 @@ int main(void)
 		line[strcspn(line, "\n")] = '\0';
 		char **tokens = split_line(line);
 
-		if (tokens[0] != NULL)
-		{
-			_exec(tokens);
-		}
+		
+		_exec(tokens);
 
 		free(tokens);
 		free(line);
