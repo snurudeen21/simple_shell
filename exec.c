@@ -11,7 +11,7 @@ void _exec(char **args)
 	pid_t child_id = fork();
 
 	if (child_id == 0)
- 	{
+        {
                 execve(args[0], args, NULL);
                 perror("nsh");
                 exit(1);
