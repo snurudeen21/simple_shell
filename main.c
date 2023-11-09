@@ -11,6 +11,7 @@ int main(void)
 	while (true)
 	{
 		char *line = read_line();
+		line[strcspn(line, "\n")] = '\0';
 		char **tokens = split_line(line);
 
 		if (tokens[0] != NULL)
