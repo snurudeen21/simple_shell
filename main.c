@@ -8,8 +8,15 @@
 
 int main(void)
 {
-	while (true)
+	bool is_pipe = false;
+
+	while (true && !is_pipe)
 	{
+		if (isatty(STDIN_FILENO) == 0)
+		{
+			is_pipe = true;
+		}
+		
 		my_prompt("#cisfun$ ");
 		char *line = read_line();
 		line[strcspn(line, "\n")] = '\0';
