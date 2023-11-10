@@ -15,7 +15,7 @@ char *read_line(void)
 	if (bytes == -1)
 	{
 		perror("Error in getline");
-		free(line)
+		free(line);
 		exit(EXIT_FAILURE);
 	}
 	if (line[bytes - 1] == '\n')
