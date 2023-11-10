@@ -23,7 +23,7 @@ int main(int agc, char *agv[], char **envn)
 
 		if (tokens[0] != NULL)
 		{
-			_exec(tokens);
+			_exec(tokens, envn);
 		}
 
 		free(tokens);
