@@ -22,6 +22,6 @@ char *read_line(void)
 	{
 		line[bytes - 1] == '\0';
 	}
-	
+
 	return (line);
 }
