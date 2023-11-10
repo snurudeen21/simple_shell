@@ -6,7 +6,7 @@
 * Return: 0
 */
 
-int main(int agc, char *agv[], char **envn)
+int main(void)
 {
 	bool is_pipe = false;
 
@@ -23,7 +23,7 @@ int main(int agc, char *agv[], char **envn)
 
 		if (tokens[0] != NULL)
 		{
-			_exec(tokens, envn);
+			_exec(tokens);
 		}
 
 		free(tokens);
