@@ -6,7 +6,7 @@
 * Return: 0
 */
 
-int main(void)
+int main(int agc, char *agv[], char **envn)
 {
 	bool is_pipe = false;
 
