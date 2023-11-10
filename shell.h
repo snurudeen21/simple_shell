@@ -13,7 +13,7 @@ char *_strdup(char *s);
 void my_prompt(char *prompt);
 char *read_line(void);
 char **split_line(char *line);
-void _exec(char **args, char **envn);
+void _exec(char **args);
 
 
 #endif /* SHELL_H */
