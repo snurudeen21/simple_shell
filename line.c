@@ -20,7 +20,7 @@ char *read_line(void)
 	}
 	if (line[bytes - 1] == '\n')
 	{
-		line[bytes - 1] == '\0';
+		line[bytes - 1] = '\0';
 	}
 
 	return (line);
