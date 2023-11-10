@@ -8,6 +8,8 @@
 
 int main(void)
 {
+	char *line;
+	char **tokens;
 	bool is_pipe = false;
 
 	while (true && !is_pipe)
@@ -18,8 +20,8 @@ int main(void)
 		}
 
 		my_prompt("#cisfun$ ");
-		char *line = read_line();
-		char **tokens = split_line(line);
+		line = read_line();
+		tokens = split_line(line);
 
 		if (tokens[0] != NULL)
 		{
