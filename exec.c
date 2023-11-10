@@ -6,13 +6,13 @@
 * Return: 0
 */
 
-void _exec(char **args, char **envn)
+void _exec(char **args)
 {
 	pid_t child_id = fork();
 
 	if (child_id == 0)
 	{
-		execve(args[0], args, envn);
+		execve(args[0], args, NULL);
 		perror("nsh");
 		exit(1);
 	}
