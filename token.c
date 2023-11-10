@@ -18,7 +18,7 @@ char **split_line(char *line)
 
 	while (token != NULL)
 	{
-		tokens[length] = token;
+		tokens[length] = _strdup(token);
 		length++;
 
 		token = strtok(NULL, delimiters);
