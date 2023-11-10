@@ -12,7 +12,7 @@ void _exec(char **args)
 
 	if (child_id == 0)
 	{
-		execve(args[0], NULL);
+		execve(args[0], args, NULL);
 		perror("nsh");
 		exit(1);
 	}
