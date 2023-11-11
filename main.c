@@ -23,6 +23,10 @@ int main(void)
 		line = read_line();
 		tokens = split_line(line);
 
+		if (tokens[0] == "exit\n")
+		{
+			
+		
 		if (tokens[0] != NULL)
 		{
 			_exec(tokens);
