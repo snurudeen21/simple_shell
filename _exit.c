@@ -10,6 +10,6 @@
 void _exit(char **token, char *line)
 {
 	free(line);
-	free_buffers(command);
+	free(command);
 	exit(0);
 }
