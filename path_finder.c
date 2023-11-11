@@ -1,4 +1,10 @@
 #include "shell.h"
+/**
+* _pathfinder - find path to command in PATH
+* @command: command to append to path in PATH
+*
+* Return: 0
+*/
 
 char *_pathfinder(char *command)
 {
