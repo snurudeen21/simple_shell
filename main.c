@@ -26,6 +26,9 @@ int main(void)
 		if (_strcmp(tokens[0], "exit") == 0)
 		exit_shell(line, tokens);
 
+		if (strcmp(tokens[0], "env") == 0)
+		print_env();
+
 		if (tokens[0] != NULL)
 		{
 			_exec(tokens);
