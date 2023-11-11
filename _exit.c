@@ -7,9 +7,9 @@
 *
 * Return: no return
 */
-void _exit(char **token, char *line)
+void _exit(char *line, char **token)
 {
 	free(line);
-	free(command);
+	free(token);
 	exit(0);
 }
