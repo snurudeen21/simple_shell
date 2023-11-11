@@ -24,7 +24,7 @@ int main(void)
 		tokens = split_line(line);
 
 		if (tokens[0] == "exit\n")
-		_exit(line, tokens);
+		exit_shell(line, tokens);
 
 		if (tokens[0] != NULL)
 		{
