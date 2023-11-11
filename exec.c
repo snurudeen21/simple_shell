@@ -14,8 +14,6 @@ void _exec(char **args)
 
 	if (executable_path == NULL)
 	{
-		free(args[0]);
-		free(args);
 		return;
 	}
 
