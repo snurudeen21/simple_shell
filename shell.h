@@ -18,6 +18,6 @@ void _exec(char **args);
 char *_strcpy(char *dest, const char *src);
 char *_strcat(char *dest, char *src);
 char *_pathfinder(char *command);
-void _exit(char **token, char *line);
+void _exit(char *line, char **token);
 
 #endif /* SHELL_H */
