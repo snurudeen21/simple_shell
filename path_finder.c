@@ -10,17 +10,19 @@ char *_pathfinder(char *command)
 	int i = 0;
 	char *executable_path = NULL;
 
-	while (paths[i] != NULL) {
+	while (paths[i] != NULL)
+	{
 		executable_path = malloc(200);
-		if (executable_path == NULL) {
+		if (executable_path == NULL)
+		{
 			perror("nsh");
-			return NULL;
+			return (NULL);
 		}
 		_strcpy(executable_path, paths[i]);
 		_strcat(executable_path, "/");
 		_strcat(executable_path, command);
 
-		if (stat(executable_path, &st) == 0) 
+		if (stat(executable_path, &st) == 0)
 		{
 			break;
 		}
@@ -29,10 +31,11 @@ char *_pathfinder(char *command)
 		i++;
 	}
 
-	if (paths[i] == NULL) {
+	if (paths[i] == NULL)
+	{
 		perror("nsh: command not found");
-		return NULL;
+		return (NULL);
 	}
 
-	return executable_path;
+	return (executable_path);
 }
