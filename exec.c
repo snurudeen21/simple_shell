@@ -10,75 +10,31 @@ void _exec(char **args)
 {
 	pid_t child_id;
 	int _stat;
-	struct stat st;
-	
+	char *executable_path = _pathfinder(args[0]);
 
-	const char *paths[] = {
-	"/bin",
-	"/sbin",
-	"/usr/bin",
-	"/usr/sbin",
-	"/usr/local/bin",
-	"/usr/local/sbin",
-	"/opt/bin",
-	"/opt/sbin"
-	};
-
-	int i = 0;
-	int found = 0;
-
-	while (paths[i] != NULL)
-	{
-		char *executable_path = malloc(sizeof(char) * (20 + _strlen(args[0])));
-		if (executable_path == NULL)
-		{
-			perror("nsh");
-			return;
-		}
-
-		_strcpy(executable_path, paths[i]);
-		_strcat(executable_path, "/");
-		_strcat(executable_path, args[0]);
-
-		if (stat(executable_path, &st) == 0)
-		{
-			found = 1;
-			args[0] = _strdup(executable_path);
-			free(executable_path);
-			break;
-		}
-		free(executable_path);
-		i++;
-	}
-
-	if (found == 0)
-	{
-		perror("nsh: command not found");
+	if (executable_path == NULL) {
 		free(args[0]);
 		free(args);
 		return;
 	}
-   
 
 	child_id = fork();
-
-	if (child_id == -1)
-	{
+	if (child_id == -1) {
 		perror("nsh");
+		free(executable_path);
 		return;
 	}
-	if (child_id == 0)
-	{
-		if (execve(args[0], args, NULL) == -1)
-		{
+
+	if (child_id == 0) {
+		if (execve(executable_path, args, NULL) == -1) {
 			perror("nsh");
 		}
 		exit(EXIT_FAILURE);
+	} else {
+		do {
+			waitpid(child_id, &_stat, WUNTRACED);
+		} while (!WIFEXITED(_stat) && !WIFSIGNALED(_stat));
 	}
-	else
-	{
-        do {
-		waitpid(child_id, &_stat, WUNTRACED);
-	} while (!WIFEXITED(_stat) && !WIFSIGNALED(_stat));
-	}
+
+	free(executable_path);
 }
