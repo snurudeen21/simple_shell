@@ -25,7 +25,7 @@ int main(void)
 
 		if (tokens[0] == "exit\n")
 		_exit(line, token);
-		
+
 		if (tokens[0] != NULL)
 		{
 			_exec(tokens);
