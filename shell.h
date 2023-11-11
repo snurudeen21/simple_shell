@@ -17,6 +17,6 @@ char **split_line(char *line);
 void _exec(char **args);
 char *_strcpy(char *dest, const char *src);
 char *_strcat(char *dest, char *src);
-
+char *_pathfinder(char *command);
 
 #endif /* SHELL_H */
