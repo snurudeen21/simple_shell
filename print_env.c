@@ -7,7 +7,7 @@
 
 void print_env(void)
 {
-	extern char **environ;  // Access the environment variables
+	extern char **environ;
 	char **env = environ;
 
 	while (*env != NULL)
