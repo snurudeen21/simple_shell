@@ -23,7 +23,7 @@ int main(void)
 		line = read_line();
 		tokens = split_line(line);
 
-		if (tokens[0] == "exit\n")
+		if (tokens[0] == "exit")
 		exit_shell(line, tokens);
 
 		if (tokens[0] != NULL)
