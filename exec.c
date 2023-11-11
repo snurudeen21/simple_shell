@@ -9,7 +9,7 @@
 void _exec(char **args)
 {
 	pid_t child_id;
-	int stat;
+	int _stat;
 	struct stat st;
 	
 
@@ -78,8 +78,8 @@ void _exec(char **args)
 	else
 	{
         do {
-		waitpid(child_id, &stat, WUNTRACED);
-	} while (!WIFEXITED(stat) && !WIFSIGNALED(stat));
+		waitpid(child_id, &_stat, WUNTRACED);
+	} while (!WIFEXITED(_stat) && !WIFSIGNALED(_stat));
 	}
 
 	free(args[0]);
