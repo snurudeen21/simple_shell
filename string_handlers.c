@@ -114,14 +114,3 @@ int _strcmp(char *s1, char *s2)
 
 	return (0);
 }
-
-/**
-* my_prompt - print a string text to stdout
-* @prompt: pointer array to text to print
-*
-* Return: 0
-*/
-void my_prompt(char *prompt)
-{
-	write(STDOUT_FILENO, prompt, _strlen(prompt));
-}
