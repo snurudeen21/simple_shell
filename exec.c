@@ -81,7 +81,4 @@ void _exec(char **args)
 		waitpid(child_id, &_stat, WUNTRACED);
 	} while (!WIFEXITED(_stat) && !WIFSIGNALED(_stat));
 	}
-
-	free(args[0]);
-	free(args);
 }
