@@ -29,7 +29,7 @@ void _exec(char **args)
 
 	while (paths[i] != NULL)
 	{
-		char *executable_path = malloc(sizeof(char) * (_strlen(paths[i]) + _strlen(args[0]) + 2));
+		char *executable_path = malloc(sizeof(char) * (20 + _strlen(args[0])));
 		if (executable_path == NULL)
 		{
 			perror("nsh");
