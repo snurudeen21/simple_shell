@@ -26,7 +26,6 @@ char *_pathfinder(char *command)
 		{
 			break;
 		}
-		free(executable_path);
 		executable_path = NULL;
 		i++;
 	}
