@@ -37,7 +37,7 @@ char *_strcpy(char *dest, const char *src)
 	}
 
 	*dest = '\0';
-	return original_dest;
+	return (original_dest);
 }
 
 /**
@@ -64,7 +64,7 @@ char *_strcat(char *dest, char *src)
 	}
 
 	*dest = '\0';
-	return original_dest;
+	return (original_dest);
 }
 
 
