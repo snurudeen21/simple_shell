@@ -20,7 +20,7 @@ char *_strcat(char *dest, char *src);
 char *_pathfinder(char *command);
 void exit_shell(char *line, char **token);
 int _strcmp(char *s1, char *s2);
-void print_env(void);
+void print_env(char **env);
 
 
 #endif /* SHELL_H */
