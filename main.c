@@ -6,7 +6,7 @@
 * Return: 0
 */
 
-int main(int main(int agc __attribute__((unused)), char **agv __attribute__((unused)), char **env))
+int main(int agc __attribute__((unused)), char **agv __attribute__((unused)), char **env)
 {
 	char *line;
 	char **tokens;
