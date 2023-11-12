@@ -6,7 +6,7 @@
 * Return: 0
 */
 
-int main(void)
+int main(int main(int agc __attribute__((unused)), char **agv __attribute__((unused)), char **env))
 {
 	char *line;
 	char **tokens;
@@ -27,7 +27,7 @@ int main(void)
 		exit_shell(line, tokens);
 
 		if (_strcmp(tokens[0], "env") == 0)
-		print_env();
+		print_env(env);
 
 		if (tokens[0] != NULL)
 		{
