@@ -5,14 +5,13 @@
  * Return: void
  */
 
-void print_env(void)
+void print_env(char **env)
 {
 	int i = 0;
-	char *env = NULL;
 
-	while ((env = environ[i]) != NULL)
+	while (env[i] != NULL)
 	{
-		printf("%s\n", env);
+		printf("%s\n", env[i]);
 		i++;
 	}
 }
