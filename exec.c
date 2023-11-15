@@ -16,7 +16,7 @@ void _exec(char **args)
 	{
 		executable_path = args[0];
 		if (stat(executable_path, &st) == 0)
-		executable_path == NULL;
+		executable_path = NULL;
 	}
 	else
 	executable_path = _pathfinder(args[0]);
