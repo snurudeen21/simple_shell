@@ -27,7 +27,7 @@ int main(int agc, char *agv[], char **env)
 		line = read_line();
 		tokens = split_line(line);
 
-		if (_strcmp(tokens[0], "\n") == 0)
+		if (_strcmp(tokens[0], "\0") == 0)
 		continue;
 		
 		if (_strcmp(tokens[0], "exit") == 0)
