@@ -17,10 +17,18 @@ int main(int agc, char *agv[], char **env)
 
 	while (true)
 	{
+		if (isatty(STDIN_FILENO) == 0)
+		{
+			is_pipe = true;
+		}
+		
 		my_prompt("#cisfun$ ");
 		line = read_line();
 		tokens = split_line(line);
 
+		if (_strcmp(tokens[0], '\n') == 0)
+		continue;
+		
 		if (_strcmp(tokens[0], "exit") == 0)
 		exit_shell(line, tokens);
 
