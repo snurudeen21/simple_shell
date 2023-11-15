@@ -9,11 +9,10 @@
 * Return: 0
 */
 
-int main(int agc, char *agv[], char **env)
+int main()
 {
 	char *line;
 	char **tokens;
-	(void)agc, (void)agv;
 
 	while (true)
 	{
