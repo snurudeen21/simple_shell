@@ -11,6 +11,7 @@ void _exec(char **args)
 	pid_t child_id;
 	int _stat;
 	char *executable_path;
+	extern char **envn;
 
 	if (strcspn(args[0], "/") == 0)
 	{
