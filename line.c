@@ -19,7 +19,7 @@ char *read_line(void)
 			perror("\n");
 			clearerr(stdin);
 			exit(0);
-
+		}
 		else
 		{
 			perror("Error in getline");
