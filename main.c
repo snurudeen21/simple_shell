@@ -13,7 +13,7 @@ int main(int agc, char *agv[], char **env)
 {
 	char *line;
 	char **tokens;
-	bool is_pipe = false
+	bool is_pipe = false;
 	(void)agc, (void)agv;
 
 	while (true && !is_pipe)
