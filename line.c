@@ -15,7 +15,10 @@ char *read_line(void)
 	if (bytes == -1)
 	{
 		if (feof(stdin))
-		exit(0);
+		{
+			perror("\n");
+			clearerr(stdin);
+			exit(0);
 
 		else
 		{
