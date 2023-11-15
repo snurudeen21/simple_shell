@@ -9,6 +9,8 @@
 #include <unistd.h>
 #include <sys/stat.h>
 
+struct stat st;
+
 int _strlen(char *s);
 char *_strdup(char *s);
 void my_prompt(char *prompt);
