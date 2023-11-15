@@ -15,7 +15,7 @@ void _exec(char **args)
 	if (strcspn(args[0], "/") == 0)
 	{
 		executable_path = args[0];
-		if (stat(executable_path, &st) == 0)
+		if (stat(executable_path, &st) == -1)
 		executable_path = NULL;
 	}
 	else
