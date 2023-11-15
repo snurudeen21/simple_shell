@@ -14,7 +14,8 @@ char *read_line(void)
 	bytes = getline(&line, &buflen, stdin);
 	if (bytes == -1)
 	{
-		exit(0);
+		free(line);
+		exit(EXIT_FAILURE);
 	}
 	if (line[bytes - 1] == '\n')
 	{
