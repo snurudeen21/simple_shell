@@ -16,7 +16,7 @@ char *read_line(void)
 	{
 		if (feof(stdin))
 		{
-			print("\n");
+			printf("\n");
 			exit(0);
 		}
 		else
