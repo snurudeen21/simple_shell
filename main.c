@@ -33,7 +33,7 @@ int main(int agc, char *agv[], char **env)
 		if (_strcmp(tokens[0], "env") == 0)
 		print_env(env);
 
-		if (_strlen(tokens[0]) == 0)
+		if (_strcmp(tokens[0], "\n") == 0)
 		tokens[0] = NULL;
 
 		if (tokens[0] != NULL)
