@@ -10,6 +10,7 @@
 #include <sys/stat.h>
 
 struct stat st;
+extern char **envn;
 
 int _strlen(char *s);
 char *_strdup(char *s);
