@@ -13,9 +13,14 @@ int main()
 {
 	char *line;
 	char **tokens;
+	bool is_pipe = false;
 
-	while (true)
+	while (true && !is_pipe)
 	{
+		if (isatty(STDIN_FILENO) == 0)
+		{
+			is_pipe = true;
+		}
 		my_prompt("#cisfun$ ");
 		line = read_line();
 		if (_strlen(line) == 0)
