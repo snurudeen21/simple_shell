@@ -36,7 +36,7 @@ void _exec(char **args)
 
 	if (child_id == 0)
 	{
-		if (execve(executable_path, args, NULL) == -1)
+		if (execve(executable_path, args, envn) == -1)
 		perror("nsh");
 
 		exit(EXIT_FAILURE);
