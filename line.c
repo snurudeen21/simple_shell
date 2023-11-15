@@ -14,6 +14,7 @@ char *read_line(void)
 	bytes = getline(&line, &buflen, stdin);
 	if (bytes == -1)
 	{
+		perror("Error in getline");
 		free(line);
 		exit(EXIT_FAILURE);
 	}
