@@ -19,24 +19,29 @@ int main(int agc, char *agv[], char **env)
 	{
 		my_prompt("#cisfun$ ");
 		line = read_line();
-		tokens = split_line(line);
-		
-		if (_strcmp(tokens[0], "exit") == 0)
-		exit_shell(line, tokens);
-
-		if (_strcmp(tokens[0], "env") == 0)
-		print_env(env);
-
-		if (_strcmp(tokens[0], "\0") == 0)
-		tokens[0] = NULL;
-
-		if (tokens[0] != NULL)
+		if (_strlen(line) == 0)
 		{
-			_exec(tokens);
+			free(line);
+			continue;
 		}
+		else
+		{
+			tokens = split_line(line);
+		
+			if (_strcmp(tokens[0], "exit") == 0)
+			exit_shell(line, tokens);
 
-		free(tokens);
-		free(line);
+			if (_strcmp(tokens[0], "env") == 0)
+			print_env(env);
+
+			if (tokens[0] != NULL)
+			{
+				_exec(tokens);
+			}
+
+			free(tokens);
+			free(line);
+		}
 	}
 	return (0);
 }
