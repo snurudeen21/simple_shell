@@ -15,7 +15,7 @@ int main(int agc, char *agv[], char **env)
 	char **tokens;
 	(void)agc, (void)agv;
 
-	while (true && !is_pipe)
+	while (true)
 	{
 		my_prompt("#cisfun$ ");
 		line = read_line();
