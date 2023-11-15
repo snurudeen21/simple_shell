@@ -31,7 +31,7 @@ int main()
 			exit_shell(line, tokens);
 
 			if (_strcmp(tokens[0], "env") == 0)
-			print_env(env);
+			print_env(environ);
 
 			if (tokens[0] != NULL)
 			{
