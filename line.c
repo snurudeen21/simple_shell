@@ -16,7 +16,7 @@ char *read_line(void)
 	{
 		if (feof(stdin))
 		{
-			printf("\n");
+			my_prompt("\n");
 			exit(0);
 		}
 		else
