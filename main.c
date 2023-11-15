@@ -34,7 +34,7 @@ int main(int agc, char *agv[], char **env)
 		print_env(env);
 
 		if (_strlen(tokens[0]) == 0)
-		tokens[0] == NULL;
+		tokens[0] = NULL;
 
 		if (tokens[0] != NULL)
 		{
