@@ -10,7 +10,14 @@ void _exec(char **args)
 {
 	pid_t child_id;
 	int _stat;
-	char *executable_path = _pathfinder(args[0]);
+	char *executable_path;
+
+	if (strcspn(args[0], "/") == 0)
+	{
+		executable_path = args[0];
+	}
+	else
+	executable_path = _pathfinder(args[0]);
 
 	if (executable_path == NULL)
 	{
