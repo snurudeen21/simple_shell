@@ -11,7 +11,7 @@ void _exec(char **args)
 	pid_t child_id;
 	int _stat;
 	char *executable_path;
-	extern char **envn;
+	extern char **environ;
 
 	if (strcspn(args[0], "/") == 0)
 	{
@@ -37,7 +37,7 @@ void _exec(char **args)
 
 	if (child_id == 0)
 	{
-		if (execve(executable_path, args, envn) == -1)
+		if (execve(executable_path, args, environ) == -1)
 		perror("nsh");
 
 		exit(EXIT_FAILURE);
