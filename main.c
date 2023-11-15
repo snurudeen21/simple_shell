@@ -13,9 +13,10 @@ int main(int agc, char *agv[], char **env)
 {
 	char *line;
 	char **tokens;
+	bool is_pipe = false
 	(void)agc, (void)agv;
 
-	while (true)
+	while (true && !is_pipe)
 	{
 		if (isatty(STDIN_FILENO) == 0)
 		{
@@ -26,7 +27,7 @@ int main(int agc, char *agv[], char **env)
 		line = read_line();
 		tokens = split_line(line);
 
-		if (_strcmp(tokens[0], '\n') == 0)
+		if (_strcmp(tokens[0], "\n") == 0)
 		continue;
 		
 		if (_strcmp(tokens[0], "exit") == 0)
