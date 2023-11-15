@@ -13,16 +13,10 @@ int main(int agc, char *agv[], char **env)
 {
 	char *line;
 	char **tokens;
-	bool is_pipe = false;
 	(void)agc, (void)agv;
 
 	while (true && !is_pipe)
 	{
-		if (isatty(STDIN_FILENO) == 0)
-		{
-			is_pipe = true;
-		}
-		
 		my_prompt("#cisfun$ ");
 		line = read_line();
 		tokens = split_line(line);
