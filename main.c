@@ -30,7 +30,7 @@ int main(void)
 			tokens = split_line(line);
 
 			if (_strcmp(tokens[0], "exit") == 0)
-			exit_shell(line, tokens);
+			exit_shell();
 
 			if (_strcmp(tokens[0], "env") == 0)
 			print_env(environ);
