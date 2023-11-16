@@ -21,7 +21,7 @@ void _exec(char **args);
 char *_strcpy(char *dest, const char *src);
 char *_strcat(char *dest, char *src);
 char *_pathfinder(char *command);
-void exit_shell(char *line, char **token);
+void exit_shell(void);
 int _strcmp(char *s1, char *s2);
 void print_env(char **env);
 void free_buf(char **buf);
