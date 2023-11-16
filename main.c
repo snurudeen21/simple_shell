@@ -2,14 +2,11 @@
 
 /**
 * main - execute line, tokens and excecute functions
-* @agc: command and arguments count
-* @agv: command and arguments
-* @env: program environment variable
 *
 * Return: 0
 */
 
-int main()
+int main(void)
 {
 	char *line;
 	char **tokens;
@@ -31,7 +28,7 @@ int main()
 		else
 		{
 			tokens = split_line(line);
-		
+
 			if (_strcmp(tokens[0], "exit") == 0)
 			exit_shell(line, tokens);
 
