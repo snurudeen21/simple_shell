@@ -34,7 +34,6 @@ void _exec(char **args)
 		free(executable_path);
 		return;
 	}
-
 	if (child_id == 0)
 	{
 		if (execve(executable_path, args, environ) == -1)
