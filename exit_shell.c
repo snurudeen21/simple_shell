@@ -7,9 +7,7 @@
 *
 * Return: no return
 */
-void exit_shell(char *line, char **token)
+void exit_shell(void)
 {
-	free(line);
-	free(token);
 	exit(0);
 }
