@@ -9,7 +9,7 @@
 char *_pathfinder(char *command)
 {
 	struct stat st;
-	
+
 	const char *paths[] = {
 		"/bin", "/sbin", "/usr/bin", "/usr/sbin", "/usr/local/bin",
 		"/usr/local/sbin", "/opt/bin", "/opt/sbin", NULL
