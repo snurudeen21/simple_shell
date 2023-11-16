@@ -40,7 +40,7 @@ int main(void)
 				_exec(tokens);
 			}
 
-			free(tokens);
+			free_buf(tokens);
 			free(line);
 		}
 	}
