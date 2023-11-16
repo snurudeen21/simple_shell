@@ -9,5 +9,7 @@
 */
 void exit_shell(char *line, char **token)
 {
+	free(line);
+	free(token);
 	exit(0);
 }
