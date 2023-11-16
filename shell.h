@@ -10,7 +10,6 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
-struct stat st;
 extern char **environ;
 
 int _strlen(char *s);
