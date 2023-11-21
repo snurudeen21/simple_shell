@@ -21,9 +21,5 @@ char *_strcat(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 void free_buf(char **buf);
 
-struct flags
-{
-bool interact;
-} flags;
 
 #endif /* SHELL_H */
