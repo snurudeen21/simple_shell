@@ -10,9 +10,14 @@ int main(void)
 {
 	char *line;
 	char **tokens;
+	is_pipe = false
 
-	while (true)
+	while (true && !is_pipe)
 	{
+		if (isatty(STDIN_FILENO) == 0)
+		{
+			is_pipe = true;
+		}
 		my_prompt();
 		line = read_line();
 		if (_strlen(line) == 0)
