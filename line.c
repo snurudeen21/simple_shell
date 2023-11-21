@@ -14,9 +14,17 @@ char *read_line(void)
 	bytes = getline(&line, &buflen, stdin);
 	if (bytes == -1)
 	{
-		perror("Error in getline");
-		free(line);
-		exit(EXIT_FAILURE);
+		if (feof(stdin))
+		{
+			write(1, "\n", 1);
+			exit(0);
+		}
+		else
+		{
+			perror("Error in getline");
+			free(line);
+			exit(EXIT_FAILURE);
+		}
 	}
 	if (line[bytes - 1] == '\n')
 	{
