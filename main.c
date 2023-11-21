@@ -18,7 +18,7 @@ int main(void)
 		{
 			is_pipe = true;
 		}
-		my_prompt("#cisfun$ ");
+		my_prompt();
 		line = read_line();
 		if (_strlen(line) == 0)
 		{
