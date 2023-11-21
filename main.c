@@ -10,7 +10,7 @@ int main(void)
 {
 	char *line;
 	char **tokens;
-	is_pipe = false;
+	bool is_pipe = false;
 
 	while (true && !is_pipe)
 	{
