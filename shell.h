@@ -11,7 +11,7 @@
 
 int _strlen(char *s);
 char *_strdup(char *s);
-void my_prompt(char *prompt);
+void my_prompt(void);
 char *read_line(void);
 char **split_line(char *line);
 void _exec(char **args);
