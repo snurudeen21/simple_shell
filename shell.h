@@ -8,6 +8,7 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
+extern char **environ;
 
 int _strlen(char *s);
 char *_strdup(char *s);
