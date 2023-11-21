@@ -9,6 +9,6 @@ void my_prompt(void)
 {
 	if ((isatty(STDIN_FILENO) == 1) && (isatty(STDOUT_FILENO) == 1))
 	flags.interact = 1;
-	if (flags.interac)
+	if (flags.interact)
 	write(STDOUT_FILENO, "($) ", 4);
 }
