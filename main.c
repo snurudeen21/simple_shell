@@ -18,11 +18,6 @@ int main(void)
 		my_prompt();
 		bytes = getline(&line, &buflen, stdin);
 
-		if (bytes == -1)
-		{
-			perror("Error in getline");
-			return (-1);
-		}
 		if (line[bytes - 1] == '\n')
 		{
 			line[bytes - 1] = '\0';
