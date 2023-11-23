@@ -10,8 +10,9 @@ int main(void)
 {
 	char *line;
 	char **tokens;
-	ssize_t read
-
+	size_t buflen = 0;
+	ssize_t bytes;
+	
 	while ()
 	{
 		if (isatty(STDIN_FILENO) == 0)
