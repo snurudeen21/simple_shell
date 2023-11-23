@@ -15,13 +15,13 @@ int main(void)
 	
 	while ((bytes = getline(&line, &buflen, stdin) != EOF))
 	{
-		my_prompt();
 		if (line[bytes - 1] == '\n')
 		{
 			line[bytes - 1] = '\0';
 		}
 
 		tokens = split_line(line);
+		my_prompt();
 
 		if (tokens[0] != NULL)
 		{
