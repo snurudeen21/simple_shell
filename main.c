@@ -10,9 +10,9 @@ int main(void)
 {
 	char *line;
 	char **tokens;
-	bool is_pipe = false;
+	ssize_t read
 
-	while (true && !is_pipe)
+	while ()
 	{
 		if (isatty(STDIN_FILENO) == 0)
 		{
