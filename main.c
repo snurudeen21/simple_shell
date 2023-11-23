@@ -19,17 +19,24 @@ int main(void)
 		{
 			line[bytes - 1] = '\0';
 		}
-
-		tokens = split_line(line);
 		my_prompt();
-
-		if (tokens[0] != NULL)
+		if (_strlen(line) == 0)
 		{
-			_exec(tokens);
+			free(line);
+			continue;
 		}
+		else
+		{
+			tokens = split_line(line);
+		
+			if (tokens[0] != NULL)
+			{
+				_exec(tokens);
+			}
 
-		free_buf(tokens);
-		free(line);
+			free_buf(tokens);
+			free(line);
+		}
 		
 	}
 	return (0);
