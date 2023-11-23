@@ -13,7 +13,6 @@ extern char **environ;
 int _strlen(char *s);
 char *_strdup(char *s);
 void my_prompt(void);
-char *read_line(void);
 char **split_line(char *line);
 void _exec(char **args);
 char *_strcpy(char *dest, const char *src);
