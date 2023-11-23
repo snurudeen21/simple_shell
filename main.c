@@ -16,8 +16,6 @@ int main(void)
 	while ((bytes = getline(&line, &buflen, stdin) != EOF))
 	{
 		my_prompt();
-		bytes = getline(&line, &buflen, stdin);
-
 		if (line[bytes - 1] == '\n')
 		{
 			line[bytes - 1] = '\0';
