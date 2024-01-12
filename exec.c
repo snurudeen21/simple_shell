@@ -18,9 +18,9 @@ void _exec(char **args)
 		i++;
 	}
 
+	child_id = fork();
 	while (j < i)
 	{
-		child_id = fork();
 		if (child_id == -1)
 		{
 			perror("nsh");
