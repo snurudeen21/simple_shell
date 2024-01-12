@@ -13,7 +13,7 @@ char *read_line(void)
 
 	bytes = getline(&line, &buflen, stdin);
 
-	if bytes == EOF
+	if (bytes == EOF)
 	{
 		exit(0);
 	}
