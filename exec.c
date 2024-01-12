@@ -30,10 +30,10 @@ void _exec(char **args)
 		{
 			if (execve(args[j], args, environ) == -1)
 			{
+				j++;
 				perror("nsh");
 				exit(EXIT_FAILURE);
 			}
-			j++;
 		} else
 		{
 			do {
