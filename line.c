@@ -12,19 +12,17 @@ char *read_line(void)
 	ssize_t bytes;
 
 	bytes = getline(&line, &buflen, stdin);
+
+	if bytes == EOF
+	{
+		exit(0);
+	}
 	if (bytes == -1)
 	{
-		if (feof(stdin))
-		{
-			my_prompt("\n");
-			exit(0);
-		}
-		else
-		{
-			perror("Error in getline");
-			free(line);
-			exit(EXIT_FAILURE);
-		}
+		
+		perror("Error in getline");
+		free(line);
+		exit(EXIT_FAILURE);
 	}
 	if (line[bytes - 1] == '\n')
 	{
