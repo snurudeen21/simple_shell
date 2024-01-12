@@ -16,9 +16,10 @@ int main(void)
 	{
 		if (isatty(STDIN_FILENO) == 0)
 		{
-			my_prompt();
 			is_pipe = true;
 		}
+		else
+			my_prompt();
 		line = read_line();
 		if (_strlen(line) == 0)
 		{
