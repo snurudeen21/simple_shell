@@ -30,15 +30,16 @@ void _exec(char **args)
 		if (child_id == 0)
 		{
 			if (execve(args[j], args, environ) == -1)
-			perror("nsh");
-
-			exit(EXIT_FAILURE);
+			{
+				perror("nsh");
+				exit(EXIT_FAILURE);
+			}
+			j++;
 		} else
 		{
 			do {
 				waitpid(child_id, &_stat, WUNTRACED);
 			} while (!WIFEXITED(_stat) && !WIFSIGNALED(_stat));
 		}
-		j++;
 	}
 }
