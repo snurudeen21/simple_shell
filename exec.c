@@ -20,7 +20,7 @@ void _exec(char **args)
 	}
 	if (child_id == 0)
 	{
-		if (execve(args[0], args, environ) == -1)
+		if (execve(args[1], args, environ) == -1)
 		perror("nsh");
 
 		exit(EXIT_FAILURE);
