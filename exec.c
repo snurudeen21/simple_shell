@@ -34,12 +34,12 @@ void _exec(char **args)
 				perror("nsh");
 				exit(EXIT_FAILURE);
 			}
+			j++;
 		} else
 		{
 			do {
 				waitpid(child_id, &_stat, WUNTRACED);
 			} while (!WIFEXITED(_stat) && !WIFSIGNALED(_stat));
 		}
-		j++;
 	}
 }
