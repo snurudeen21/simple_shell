@@ -17,10 +17,9 @@ void _exec(char **args)
 	{
 		i++;
 	}
-
-	child_id = fork();
 	while (j < i)
 	{
+		child_id = fork();
 		if (child_id == -1)
 		{
 			perror("nsh");
@@ -40,6 +39,7 @@ void _exec(char **args)
 			do {
 				waitpid(child_id, &_stat, WUNTRACED);
 			} while (!WIFEXITED(_stat) && !WIFSIGNALED(_stat));
+			j++;
 		}
 	}
 }
