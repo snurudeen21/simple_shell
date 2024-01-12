@@ -13,7 +13,7 @@ char **split_line(char *line)
 	int bufer = 100;
 	char **tokens = malloc(sizeof(char *) * bufer);
 
-	char *delimiters = "\n\t";
+	char *delimiters = "\n\t\r";
 	char *token = strtok(line, delimiters);
 
 	while (token != NULL)
