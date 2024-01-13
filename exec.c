@@ -30,10 +30,9 @@ void _exec(char **args)
 		{
 			int val = execve(args[j], args, environ);
 			if (val == -1)
-			{
-				perror("nsh");
-				exit(EXIT_FAILURE);
-			}
+			perror("nsh");
+
+			exit(EXIT_SUCCESS);
 		} else
 		{
 			wait(&_stat);
