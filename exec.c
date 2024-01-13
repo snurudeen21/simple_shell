@@ -34,7 +34,7 @@ void _exec(char **args)
 		} else
 		{
 			wait(&_stat);
-			j++;
+			printf("Please work");
 		}
 	}
 }
