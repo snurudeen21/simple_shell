@@ -28,7 +28,8 @@ void _exec(char **args)
 		}
 		if (child_id == 0)
 		{
-			if (execve(args[j], args, environ) == -1)
+			int val = execve(args[j], args, environ);
+			if (val == -1)
 			{
 				perror("nsh");
 				exit(EXIT_FAILURE);
