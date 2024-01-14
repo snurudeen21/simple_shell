@@ -10,31 +10,22 @@ void _exec(char **args)
 {
 	pid_t child_id;
 	int _stat;
-	int i, j;
-	i = 0;
-	j = 0;
-	while (args[i] != NULL)
+
+	child_id = fork();
+	if (child_id == -1)
 	{
-		i++;
+		perror("nsh");
+		free(args[0]);
+		return;
 	}
-	while (j < i)
+	if (child_id == 0)
 	{
-		child_id = fork();
-		if (child_id == -1)
-		{
-			perror("nsh");
-			free(args[0]);
-			return;
-		}
-		if (child_id == 0)
-		{
-			int val = execve(args[j], args, environ);
-			if (val == -1)
-			perror("nsh");
-		} else
-		{
-			wait(&_stat);
-			printf("Please work");
-		}
+		int val = execve(args[0], args, environ);
+		if (val == -1)
+		perror("nsh");
+	} else
+	{
+		wait(&_stat);
+		printf("Please work");
 	}
 }
