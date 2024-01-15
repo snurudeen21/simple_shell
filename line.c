@@ -8,6 +8,7 @@
 void read_line(void)
 {
 	char *line = NULL;
+	char **args;
 	size_t buflen = 0;
 	ssize_t bytes;
 
@@ -33,7 +34,8 @@ void read_line(void)
 			line[bytes - 1] = '\0';
 		}
 
-		split_line(line);
+		args = split_line(line);
+		_exec(args);
 	}
 	
 	return (0);
