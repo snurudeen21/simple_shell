@@ -21,7 +21,6 @@ int main(void)
 		else
 			my_prompt();
 		read_line();
-		_exec(tokens);
 	}
 	return (0);
 }
