@@ -33,7 +33,7 @@ void read_line(void)
 		if (_strlen(line) == 0)
 		{
 			free(line);
-			is_pipe = true;
+			break;
 		}
 
 		args = split_line(line);
