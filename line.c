@@ -38,5 +38,5 @@ void read_line(void)
 		_exec(args);
 	}
 	
-	return (0);
+	return;
 }
