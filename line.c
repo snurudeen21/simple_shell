@@ -38,7 +38,6 @@ void read_line(void)
 
 		args = split_line(line);
 		_exec(args);
-		fdhjfgjhj
 	}
 	return;
 }
