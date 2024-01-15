@@ -14,12 +14,6 @@ void read_line(void)
 
 	while ( (bytes = getline(&line, &buflen, stdin)) != -1)
 	{
-		if (_strlen(line) == 0)
-		{
-			free(line);
-			continue;
-		}
-
 		if (bytes == EOF)
 		{
 			exit(0);
@@ -32,6 +26,12 @@ void read_line(void)
 		if (line[bytes - 1] == '\n')
 		{
 			line[bytes - 1] = '\0';
+		}
+		
+		if (_strlen(line) == 0)
+		{
+			free(line);
+			continue;
 		}
 
 		args = split_line(line);
