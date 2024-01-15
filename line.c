@@ -5,13 +5,13 @@
 *
 * Return: line
 */
-char *read_line(void)
+void read_line(void)
 {
 	char *line = NULL;
 	size_t buflen = 0;
 	ssize_t bytes;
 
-	bytes = getline(&line, &buflen, stdin);
+	while ( (bytes = getline(&line, &buflen, stdin);
 
 	if (bytes == EOF)
 	{
@@ -28,5 +28,7 @@ char *read_line(void)
 		line[bytes - 1] = '\0';
 	}
 
-	return (line);
+	token()
+	
+	return (0);
 }
