@@ -10,8 +10,7 @@
 char **split_line(char *line)
 {
 	int length = 0;
-	int bufer = 100;
-	char **tokens = malloc(sizeof(char *) * bufer);
+	char **tokens = malloc(sizeof(char *) * _strlen(line));
 
 	char *delimiters = "\n\t\r";
 	char *token = strtok(line, delimiters);
