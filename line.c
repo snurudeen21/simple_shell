@@ -11,28 +11,30 @@ void read_line(void)
 	char **args;
 	size_t buflen = 0;
 	ssize_t bytes;
+	bool is_pipe = false;
 
-	while ( (bytes = getline(&line, &buflen, stdin)) != -1)
+	while (true && !is_pipe)
 	{
-		/*(if (bytes == EOF)
+		bytes = getline(&line, &buflen, stdin);
+		if (bytes == EOF)
 		{
 			exit(0);
 		}
 		if (bytes == -1)
 		{
 			perror("Error in getline");
-			free(line);
-		}*/
+			break;
+		}
 		if (line[bytes - 1] == '\n')
 		{
 			line[bytes - 1] = '\0';
 		}
 		
-		/*if (_strlen(line) == 0)
+		if (_strlen(line) == 0)
 		{
 			free(line);
-			continue;
-		}*/
+			break;
+		}
 
 		args = split_line(line);
 		_exec(args);
