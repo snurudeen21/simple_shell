@@ -12,7 +12,7 @@ void read_line(void)
 	size_t buflen = 0;
 	ssize_t bytes;
 
-	while ( (bytes = getline(&line, &buflen, stdin)) != -1)
+	while ( (bytes = getline(&line, &buflen, stdin)) != EOF)
 	{
 		/*(if (bytes == EOF)
 		{
