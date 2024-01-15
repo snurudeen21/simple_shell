@@ -28,11 +28,11 @@ void read_line(void)
 			line[bytes - 1] = '\0';
 		}
 		
-		if (_strlen(line) == 0)
+		/*if (_strlen(line) == 0)
 		{
 			free(line);
 			continue;
-		}
+		}*/
 
 		args = split_line(line);
 		_exec(args);
