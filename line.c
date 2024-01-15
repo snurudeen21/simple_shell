@@ -13,6 +13,11 @@ void read_line(void)
 
 	while ( (bytes = getline(&line, &buflen, stdin)) != -1)
 	{
+		if (_strlen(line) == 0)
+		{
+			free(line);
+			continue;
+		}
 
 		if (bytes == EOF)
 		{
