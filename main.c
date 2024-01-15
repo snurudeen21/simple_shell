@@ -8,8 +8,6 @@
 
 int main(void)
 {
-	char *line;
-	char **tokens;
 	bool is_pipe = false;
 
 	while (true && !is_pipe)
