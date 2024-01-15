@@ -22,7 +22,6 @@ void read_line(void)
 		{
 			perror("Error in getline");
 			free(line);
-			exit(EXIT_FAILURE);
 		}
 		if (line[bytes - 1] == '\n')
 		{
