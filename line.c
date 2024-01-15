@@ -11,24 +11,26 @@ void read_line(void)
 	size_t buflen = 0;
 	ssize_t bytes;
 
-	while ( (bytes = getline(&line, &buflen, stdin);
+	while ( (bytes = getline(&line, &buflen, stdin)) != -1)
+	{
 
-	if (bytes == EOF)
-	{
-		exit(0);
-	}
-	if (bytes == -1)
-	{
-		perror("Error in getline");
-		free(line);
-		exit(EXIT_FAILURE);
-	}
-	if (line[bytes - 1] == '\n')
-	{
-		line[bytes - 1] = '\0';
-	}
+		if (bytes == EOF)
+		{
+			exit(0);
+		}
+		if (bytes == -1)
+		{
+			perror("Error in getline");
+			free(line);
+			exit(EXIT_FAILURE);
+		}
+		if (line[bytes - 1] == '\n')
+		{
+			line[bytes - 1] = '\0';
+		}
 
-	token()
+		split_line(line);
+	}
 	
 	return (0);
 }
