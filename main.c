@@ -20,23 +20,8 @@ int main(void)
 		}
 		else
 			my_prompt();
-		line = read_line();
-		if (_strlen(line) == 0)
-		{
-			free(line);
-			continue;
-		}
-		else
-		{
-			tokens = split_line(line);
-			if (tokens[0] != NULL)
-			{
-				_exec(tokens);
-			}
-
-			free_buf(tokens);
-			free(line);
-		}
+		read_line();
+		_exec(tokens);
 	}
 	return (0);
 }
