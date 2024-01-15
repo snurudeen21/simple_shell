@@ -14,7 +14,7 @@ void read_line(void)
 
 	while ( (bytes = getline(&line, &buflen, stdin)) != -1)
 	{
-		if (bytes == EOF)
+		/*(if (bytes == EOF)
 		{
 			exit(0);
 		}
@@ -22,7 +22,7 @@ void read_line(void)
 		{
 			perror("Error in getline");
 			free(line);
-		}
+		}*/
 		if (line[bytes - 1] == '\n')
 		{
 			line[bytes - 1] = '\0';
