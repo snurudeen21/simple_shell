@@ -23,7 +23,7 @@ void read_line(void)
 		if (bytes == -1)
 		{
 			perror("Error in getline");
-			break;
+			is_pipe = true;
 		}
 		if (line[bytes - 1] == '\n')
 		{
