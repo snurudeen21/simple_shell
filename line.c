@@ -33,10 +33,11 @@ void read_line(void)
 		if (_strlen(line) == 0)
 		{
 			free(line);
-			break;
+			is_pipe = true;
 		}
 
 		args = split_line(line);
 		_exec(args);
 	}
+	return;
 }
