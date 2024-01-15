@@ -7,7 +7,7 @@
 * Return: containing spilt command prompt
 */
 
-char **split_line(char *line)
+void split_line(char *line)
 {
 	int length = 0;
 	char **tokens = malloc(sizeof(char *) * _strlen(line));
@@ -24,5 +24,4 @@ char **split_line(char *line)
 	}
 
 	tokens[length] = NULL;
-	return (tokens);
 }
