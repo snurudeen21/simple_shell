@@ -24,8 +24,5 @@ void _exec(char **args)
 		if (val == -1)
 		perror("nsh");
 	} else
-	{
 		wait(&_stat);
-		printf("Please work");
-	}
 }
