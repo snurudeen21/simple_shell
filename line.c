@@ -16,11 +16,13 @@ void read_line(void)
 	while (true && !is_pipe)
 	{
 		bytes = getline(&line, &buflen, stdin);
+
 		if (bytes == EOF)
 		{
 			free(line);
 			exit(0);
 		}
+
 		if (bytes == -1)
 		{
 			perror("Error in getline");
