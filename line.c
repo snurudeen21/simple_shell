@@ -11,9 +11,8 @@ void read_line(void)
 	char **args;
 	size_t buflen = 0;
 	ssize_t bytes;
-	bool is_pipe = false;
 
-	while (true && !is_pipe)
+	while (true)
 	{
 		bytes = getline(&line, &buflen, stdin);
 
@@ -27,7 +26,6 @@ void read_line(void)
 		{
 			perror("Error in getline");
 			free(line);
-			is_pipe = true;
 			break;
 		}
 		if (line[bytes - 1] == '\n')
