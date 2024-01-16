@@ -20,7 +20,7 @@ void read_line(void)
 		if (bytes == EOF)
 		{
 			free(line);
-			exit(0);
+			exit(EXIT_SUCCESS);
 		}
 
 		if (bytes == -1)
