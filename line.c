@@ -18,11 +18,13 @@ void read_line(void)
 		bytes = getline(&line, &buflen, stdin);
 		if (bytes == EOF)
 		{
+			free(line);
 			exit(0);
 		}
 		if (bytes == -1)
 		{
 			perror("Error in getline");
+			free(line);
 			is_pipe = true;
 		}
 		if (line[bytes - 1] == '\n')
@@ -38,6 +40,8 @@ void read_line(void)
 
 		args = split_line(line);
 		_exec(args);
+		free(line);
+		free_buf(args);
 		if (isatty(STDIN_FILENO) != 0)
 		{
 			break;
