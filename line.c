@@ -46,5 +46,6 @@ void read_line(void)
 			break;
 		}
 	}
+	free(line);
 	return;
 }
