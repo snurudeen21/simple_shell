@@ -36,7 +36,7 @@ void read_line(void)
 		if (_strlen(line) == 0)
 		{
 			free(line);
-			continue;
+			break;
 		}
 
 		args = split_line(line);
