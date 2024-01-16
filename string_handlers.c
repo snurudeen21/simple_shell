@@ -86,7 +86,10 @@ char *_strdup(char *s)
 
 	ptr = malloc(sizeof(char) * (len + 1));
 	if (!ptr)
-	return (NULL);
+	{
+		free(ptr);
+		return (NULL);
+	}
 	for (i = 0; *s != '\0'; s++, i++)
 	ptr[i] = s[0];
 
