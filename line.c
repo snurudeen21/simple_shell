@@ -26,7 +26,7 @@ void read_line(void)
 			perror("Error in getline");
 			free(line);
 			is_pipe = true;
-			break
+			break;
 		}
 		if (line[bytes - 1] == '\n')
 		{
