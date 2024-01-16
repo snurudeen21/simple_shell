@@ -26,6 +26,7 @@ void read_line(void)
 			perror("Error in getline");
 			free(line);
 			is_pipe = true;
+			break
 		}
 		if (line[bytes - 1] == '\n')
 		{
@@ -35,7 +36,7 @@ void read_line(void)
 		if (_strlen(line) == 0)
 		{
 			free(line);
-			break;
+			continue;
 		}
 
 		args = split_line(line);
