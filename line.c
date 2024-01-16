@@ -43,7 +43,6 @@ void read_line(void)
 
 		args = split_line(line);
 		_exec(args);
-		free(line);
 		if (isatty(STDIN_FILENO) != 0)
 		{
 			break;
