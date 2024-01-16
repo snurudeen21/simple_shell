@@ -22,7 +22,8 @@ void _exec(char **args)
 	{
 		int val = execve(args[0], args, environ);
 		if (val == -1)
-		perror("nsh");
+			perror("nsh");
+		free_buf(args);
 	} else
 		wait(&_stat);
 }
