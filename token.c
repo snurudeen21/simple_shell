@@ -24,6 +24,6 @@ char **split_line(char *line)
 	}
 
 	tokens[length] = NULL;
-	free_buf(tokens);
+	free(token);
 	return (tokens);
 }
