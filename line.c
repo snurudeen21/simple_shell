@@ -38,7 +38,10 @@ void read_line(void)
 
 		args = split_line(line);
 		_exec(args);
-		b,lhjlkhjlk
+		if (isatty(STDIN_FILENO) != 0)
+		{
+			break;
+		}
 	}
 	return;
 }
