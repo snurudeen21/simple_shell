@@ -33,5 +33,6 @@ void _exec(char **args)
 		do {
 			waitpid(child_id, &_stat, WUNTRACED);
 		} while (!WIFEXITED(_stat) && !WIFSIGNALED(_stat));
+		free_buf(args);
 	}
 }
