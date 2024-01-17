@@ -12,10 +12,11 @@ void _exec(char **args)
 	int _stat;
 
 	child_id = fork();
+
 	if (child_id == -1)
 	{
 		perror("nsh");
-		free(args[0]);
+		free_buf(args);
 		return;
 	}
 	if (child_id == 0)
