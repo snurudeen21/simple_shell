@@ -21,7 +21,7 @@ int main(void)
 			my_prompt();
 		bytes = read_line();
 		if (bytes == EOF || bytes == SIGINT)
-			break;
+			return (EXIT_SUCCESS);
 	}
 	return (0);
 }
