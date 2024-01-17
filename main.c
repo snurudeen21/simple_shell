@@ -20,7 +20,7 @@ int main(void)
 		else
 			my_prompt();
 		bytes = read_line();
-		if (bytes == EOF)
+		if (bytes == EOF || bytes == SIGINT)
 			break;
 	}
 	return (0);
