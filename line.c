@@ -11,16 +11,15 @@ ssize_t read_line(void)
 	char **args;
 	size_t buflen = 0;
 	ssize_t bytes;
-	bool checker = false;
 
-	while (true && !checker)
+	while (true)
 	{
 		bytes = getline(&line, &buflen, stdin);
 
 		if (bytes == EOF)
 		{
 			free(line);
-			checker = true;
+			return (bytes);
 		}
 
 		if (bytes == -1)
@@ -42,6 +41,7 @@ ssize_t read_line(void)
 
 		args = split_line(line);
 		_exec(args);
+		buflen = 0;
 		if (isatty(STDIN_FILENO) != 0)
 		{
 			break;
