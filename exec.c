@@ -22,17 +22,16 @@ void _exec(char **args)
 	if (child_id == 0)
 	{
 		int val = execve(args[0], args, environ);
+		free_buf(args);
 		if (val == -1)
 		{
 			perror("nsh");
-			printf("I am the one");
+			exit(EXIT_FAILURE);
 		}
-		free_buf(args);
 	} else
 	{
 		do {
 			waitpid(child_id, &_stat, WUNTRACED);
 		} while (!WIFEXITED(_stat) && !WIFSIGNALED(_stat));
-		free_buf(args);
 	}
 }
