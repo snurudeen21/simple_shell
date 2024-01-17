@@ -9,6 +9,7 @@
 int main(void)
 {
 	bool is_pipe = false;
+	ssize_t bytes;
 
 	while (true && !is_pipe)
 	{
@@ -18,7 +19,9 @@ int main(void)
 		}
 		else
 			my_prompt();
-		read_line();
+		bytes = read_line();
+		if (bytes == EOF)
+			exit(EXIT_SUCCESS);
 	}
 	return (0);
 }
