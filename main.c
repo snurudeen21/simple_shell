@@ -22,7 +22,7 @@ int main(void)
 		bytes = read_line();
 		if (bytes == EOF)
 		{
-			return(0);
+			is_pipe = true;
 		}
 	}
 	return (0);
