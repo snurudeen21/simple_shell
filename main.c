@@ -22,8 +22,7 @@ int main(void)
 		bytes = read_line();
 		if (bytes == EOF)
 		{
-			is_pipe = true;
-			return(EXIT_SUCCESS);
+			exit(EXIT_SUCCESS);
 		}
 	}
 	return (0);
