@@ -26,7 +26,7 @@ void _exec(char **args)
 		free_buf(args);
 	} else
 	{
-		wait(_stat);
+		wait(&_stat);
 		free_buf(args);
 	}
 }
