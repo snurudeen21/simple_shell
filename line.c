@@ -16,11 +16,11 @@ void read_line(void)
 	{
 		bytes = getline(&line, &buflen, stdin);
 
-		/*if (bytes == EOF)
+		if (bytes == EOF)
 		{
 			free(line);
 			exit(EXIT_SUCCESS);
-		}*/
+		}
 
 		if (bytes == -1)
 		{
