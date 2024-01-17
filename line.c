@@ -46,6 +46,7 @@ ssize_t read_line(void)
 		{
 			break;
 		}
+		buflen = 0;
 	}
 	return (bytes);
 }
