@@ -16,7 +16,7 @@ ssize_t read_line(void)
 	{
 		bytes = getline(&line, &buflen, stdin);
 
-		if (bytes == EOF || bytes == SIGINT)
+		if (bytes == EOF)
 		{
 			free(line);
 			return (bytes);
