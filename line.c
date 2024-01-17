@@ -5,21 +5,22 @@
 *
 * Return: line
 */
-void read_line(void)
+ssize_t read_line(void)
 {
 	char *line = NULL;
 	char **args;
 	size_t buflen = 0;
 	ssize_t bytes;
+	bool checker = false;
 
-	while (true)
+	while (true && !checker)
 	{
 		bytes = getline(&line, &buflen, stdin);
 
 		if (bytes == EOF)
 		{
 			free(line);
-			exit(EXIT_SUCCESS);
+			checker = true;
 		}
 
 		if (bytes == -1)
@@ -46,5 +47,5 @@ void read_line(void)
 			break;
 		}
 	}
-	return;
+	return (bytes);
 }
