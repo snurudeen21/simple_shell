@@ -22,7 +22,7 @@ int main(void)
 		bytes = read_line();
 		if (bytes == EOF)
 		{
-			exit(EXIT_SUCCESS);
+			exit(0);
 		}
 	}
 	return (0);
