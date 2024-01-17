@@ -40,6 +40,7 @@ ssize_t read_line(void)
 		}
 
 		args = split_line(line);
+		free(line);
 		_exec(args);
 		buflen = 0;
 		if (isatty(STDIN_FILENO) != 0)
