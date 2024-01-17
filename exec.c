@@ -26,6 +26,8 @@ void _exec(char **args)
 		free_buf(args);
 		exit(EXIT_FAILURE);
 	} else
+	{
 		wait(&_stat);
 		free_buf(args);
+	}
 }
