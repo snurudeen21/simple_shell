@@ -24,7 +24,6 @@ void _exec(char **args)
 		if (val == -1)
 			perror("nsh");
 		free_buf(args);
-		exit(EXIT_FAILURE);
 	} else
 	{
 		wait(&_stat);
