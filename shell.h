@@ -13,7 +13,7 @@ extern char **environ;
 
 void _exec(char **args);
 void free_buf(char **buf);
-ssize_t read_line(void)
+ssize_t read_line(void);
 void my_prompt(void);
 char **split_line(char *line);
 int _strlen(char *s);
