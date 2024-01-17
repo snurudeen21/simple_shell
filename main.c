@@ -24,6 +24,7 @@ int main(void)
 		{
 			is_pipe = true;
 			return(EXIT_SUCCESS);
+		}
 	}
 	return (0);
 }
