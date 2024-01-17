@@ -21,7 +21,9 @@ int main(void)
 			my_prompt();
 		bytes = read_line();
 		if (bytes == EOF)
-			exit(EXIT_SUCCESS);
+		{
+			is_pipe = true;
+			return(EXIT_SUCCESS);
 	}
 	return (0);
 }
