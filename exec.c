@@ -26,7 +26,9 @@ void _exec(char **args)
 		free_buf(args);
 	} else
 	{
-		wait(&_stat);
+		do {
+			waitpid(child_id, &_stat, WUNTRACED);
+		} while (!WIFEXITED(_stat) && !WIFSIGNALED(_stat));
 		free_buf(args);
 	}
 }
