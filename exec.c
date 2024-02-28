@@ -39,7 +39,7 @@ void _exec(char **args)
 	}
 	if (child_id == 0)
 	{
-		int val = execve(args[0], args, environ);
+		int val = execve(executable_path, args, environ);
 		free_buf(args);
 		free(executable_path);
 		if (val == -1)
