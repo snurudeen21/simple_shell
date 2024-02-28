@@ -41,7 +41,11 @@ ssize_t read_line(void)
 
 		args = split_line(line);
 		free(line);
-		if (args[0] != NULL)
+		if (args[0] == NULL)
+		{
+			free_buf(args);
+			break;
+		}
 		_exec(args);
 		
 		buflen = 0;
