@@ -10,6 +10,23 @@ void _exec(char **args)
 {
 	pid_t child_id;
 	int _stat;
+	char *executable_path;
+	struct stat st;
+
+	if (strcspn(args[0], "/") == 0)
+	{
+		executable_path = args[0];
+		if (stat(executable_path, &st) == -1)
+		executable_path = NULL;
+	}
+	else
+	executable_path = _pathfinder(args[0]);
+
+	if (executable_path == NULL)
+	{
+		free(executable_path);
+		return;
+	}
 
 	child_id = fork();
 
@@ -17,15 +34,17 @@ void _exec(char **args)
 	{
 		perror("nsh");
 		free_buf(args);
+		free(executable_path);
 		return;
 	}
 	if (child_id == 0)
 	{
 		int val = execve(args[0], args, environ);
 		free_buf(args);
+		free(executable_path);
 		if (val == -1)
 		{
-			perror("ns");
+			perror("nsh");
 			exit(EXIT_FAILURE);
 		}
 	} else
@@ -34,5 +53,6 @@ void _exec(char **args)
 			waitpid(child_id, &_stat, WUNTRACED);
 		} while (!WIFEXITED(_stat) && !WIFSIGNALED(_stat));
 		free_buf(args);
+		free(executable_path);
 	}
 }
