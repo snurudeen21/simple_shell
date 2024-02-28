@@ -15,7 +15,7 @@ void _exec(char **args)
 
 	if (child_id == -1)
 	{
-		perror("nsh");
+		perror("na");
 		free_buf(args);
 		return;
 	}
