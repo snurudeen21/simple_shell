@@ -25,7 +25,7 @@ void _exec(char **args)
 		free_buf(args);
 		if (val == -1)
 		{
-			perror("nsh");
+			perror("ns");
 			exit(EXIT_FAILURE);
 		}
 	} else
