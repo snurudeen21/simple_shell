@@ -22,12 +22,6 @@ void _exec(char **args)
 	else
 	executable_path = _pathfinder(args[0]);
 
-	if (executable_path == NULL)
-	{
-		free(executable_path);
-		return;
-	}
-
 	child_id = fork();
 
 	if (child_id == -1)
