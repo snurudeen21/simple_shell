@@ -28,14 +28,12 @@ void _exec(char **args)
 	{
 		perror("nsh");
 		free_buf(args);
-		free(executable_path);
 		return;
 	}
 	if (child_id == 0)
 	{
 		int val = execve(executable_path, args, environ);
 		free_buf(args);
-		free(executable_path);
 		if (val == -1)
 		{
 			perror("nsh");
@@ -47,6 +45,5 @@ void _exec(char **args)
 			waitpid(child_id, &_stat, WUNTRACED);
 		} while (!WIFEXITED(_stat) && !WIFSIGNALED(_stat));
 		free_buf(args);
-		free(executable_path);
 	}
 }
