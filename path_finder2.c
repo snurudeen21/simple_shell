@@ -9,15 +9,14 @@
 char *path_finder(char *command)
 {
 	struct stat st;
-	int i = 0;
-  char *executable_path = NULL;
+    char *executable_path = NULL;
 
-  if (stat(command, &st) == 0)
-  {
-    executable_path = _strdup(command);
-    return (executable_path);
-  }
+    if (stat(command, &st) == 0)
+    {
+        executable_path = _strdup(command);
+        return (executable_path);
+    }
 
-  else
+    else
     return (NULL);
 }
