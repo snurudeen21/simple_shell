@@ -28,7 +28,7 @@ void _exec(char **args)
 		perror("Command not Found");
 		free(executable_path);
 		free_buf(args);
-		return
+		return;
 	}
 
 	if (child_id == -1)
