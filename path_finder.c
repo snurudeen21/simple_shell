@@ -19,12 +19,6 @@ char *_pathfinder(char *command)
 
 	while (paths[i] != NULL)
 	{
-		executable_path = malloc(200);
-		if (executable_path == NULL)
-		{
-			perror("nsh");
-			return (NULL);
-		}
 		_strcpy(executable_path, paths[i]);
 		_strcat(executable_path, "/");
 		_strcat(executable_path, command);
