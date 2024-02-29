@@ -11,16 +11,14 @@ void _exec(char **args)
 	pid_t child_id;
 	int _stat;
 	char *executable_path = NULL;
-	struct stat st;
 
 	if (strcspn(args[0], "/") == 0)
-	{
-		executable_path = args[0];
-	}
+	executable_path = path_finder(args[0]);
+
 	else
 	executable_path = _pathfinder(args[0]);
 
-	if (stat(executable_path, &st) == 0)
+	if (executable_path != NULL)
 	child_id = fork();
 
 	else
