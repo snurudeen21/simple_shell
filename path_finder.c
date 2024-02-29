@@ -19,7 +19,7 @@ char *_pathfinder(char *command)
 
 	while (paths[i] != NULL)
 	{
-		excutable_path = malloc(sizeof(char) * _strlen(paths[i]));
+		executable_path = malloc(sizeof(char) * _strlen(paths[i]));
 		_strcpy(executable_path, paths[i]);
 		_strcat(executable_path, "/");
 		_strcat(executable_path, command);
