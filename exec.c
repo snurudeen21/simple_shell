@@ -23,15 +23,25 @@ void _exec(char **args)
 	if (stat(executable_path, &st) == 0)
 	child_id = fork();
 
+	else
+	{
+		perror("Command not Found");
+		free(executable_path);
+		free_buf(args);
+		return
+	}
+
 	if (child_id == -1)
 	{
 		perror("nsh");
+		free(executable_path);
 		free_buf(args);
 		return;
 	}
 	if (child_id == 0)
 	{
 		int val = execve(executable_path, args, environ);
+		free(executable_path);
 		free_buf(args);
 		if (val == -1)
 		{
@@ -43,6 +53,7 @@ void _exec(char **args)
 		do {
 			waitpid(child_id, &_stat, WUNTRACED);
 		} while (!WIFEXITED(_stat) && !WIFSIGNALED(_stat));
+		free(executable_path);
 		free_buf(args);
 	}
 }
