@@ -32,11 +32,5 @@ char *_pathfinder(char *command)
 		i++;
 	}
 
-	if (paths[i] == NULL)
-	{
-		perror("nsh: command not found");
-		return (NULL);
-	}
-
 	return (executable_path);
 }
