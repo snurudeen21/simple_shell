@@ -34,8 +34,6 @@ void _exec(char **args)
 	if (child_id == -1)
 	{
 		perror("nsh");
-		free(executable_path);
-		free_buf(args);
 		return;
 	}
 	if (child_id == 0)
