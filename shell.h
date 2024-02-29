@@ -23,6 +23,7 @@ char *_strcat(char *dest, char *src);
 char *_strdup(char *s);
 int _strcmp(char *s1, char *s2);
 char *_pathfinder(char *command);
+char *path_finder(char *command);
 
 
 #endif /* SHELL_H */
